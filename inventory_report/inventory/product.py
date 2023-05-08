@@ -25,3 +25,15 @@ class Product:
             f" até {self.data_de_validade}"
             f" precisa ser armazenado {self.instrucoes_de_armazenamento}."
         )
+
+
+# product = Product(
+#       1,
+#       'Nicotine Polacrilex',
+#       'Target Corporation',
+#       '2021-02-18',
+#       '2023-09-17',
+#       'CR25 1551 4467 2549 4402 1',
+#       'instrucao 1')
+
+# print(type(product))
