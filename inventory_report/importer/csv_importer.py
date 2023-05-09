@@ -6,7 +6,7 @@ class CsvImporter(Importer):
     def __init__(self) -> None:
         pass
 
-    @staticmethod
+    @classmethod
     def import_data(cls, path):
         try:
             if not path.endswith('.csv'):
