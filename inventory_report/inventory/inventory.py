@@ -6,36 +6,33 @@ import xml.etree.ElementTree as ET
 
 
 class Inventory:
-    @staticmethod
-    def import_data(path: str, report: str):
-        type_report = Inventory.verify_path(path)
-        print('ooooo', type_report)
+    @classmethod
+    def import_data(cls, path, report):
+        type_report = cls.verify_path(path)
 
-        if (type_report == ".csv"):
-            report_read = Inventory.csv_report(path),
-        elif (type_report == ".json"):
-            report_read = Inventory.json_report(path),
+        if type_report == ".csv":
+            report_read = cls.csv_report(path)
+        elif type_report == ".json":
+            report_read = cls.json_report(path)
         else:
-            report_read = Inventory.xml_report(path)
+            report_read = cls.xml_report(path)
 
-        # print(report_read)
-        if (report == "completo"):
-            complet_simple_report = CompleteReport.generate(report_read)
-        else:
-            complet_simple_report = SimpleReport.generate(report_read)
-        return complet_simple_report
+        if report == "simples":
+            return SimpleReport.generate(report_read)
+
+        return CompleteReport.generate(report_read)
 
     @classmethod
     def csv_report(cls, path):
         csv_read = pd.read_csv(path)
-        lista_de_dict = csv_read.to_dict('records')
-        return lista_de_dict
+        dict_list = csv_read.to_dict('records')
+        return dict_list
 
     @classmethod
     def json_report(cls, path):
         json_read = pd.read_json(path)
-        lista_de_dict = json_read.to_dict('records')
-        return lista_de_dict
+        dict_list = json_read.to_dict('records')
+        return dict_list
 
     @classmethod
     def xml_report(cls, path):
@@ -52,5 +49,5 @@ class Inventory:
 
     @classmethod
     def verify_path(cls, path):
-        type_report = os.path.splitext(path)
+        type_report = os.path.splitext(path)[1]
         return type_report
