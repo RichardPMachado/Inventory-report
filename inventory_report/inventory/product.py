@@ -36,4 +36,4 @@ class Product:
 #       'CR25 1551 4467 2549 4402 1',
 #       'instrucao 1')
 
-# print(type(product))
+# print(product)
