@@ -1,11 +1,9 @@
 import os
-from pandas import pd
+import pandas as pd
 from .importer import Importer
 
 
 class JsonImporter(Importer):
-    def __init__(self) -> None:
-        pass
 
     @classmethod
     def import_data(cls, path):

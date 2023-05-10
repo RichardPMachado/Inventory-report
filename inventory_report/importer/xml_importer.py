@@ -3,8 +3,6 @@ import xml.etree.ElementTree as ET
 
 
 class XmlImporter(Importer):
-    def __init__(self) -> None:
-        pass
 
     @classmethod
     def import_data(cls, path):

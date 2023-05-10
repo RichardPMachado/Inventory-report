@@ -1,10 +1,8 @@
+import pandas as pd
 from .importer import Importer
-from pandas import pd
 
 
 class CsvImporter(Importer):
-    def __init__(self) -> None:
-        pass
 
     @classmethod
     def import_data(cls, path):
