@@ -7,6 +7,10 @@ from inventory_report.importer.xml_importer import XmlImporter
 
 
 class InventoryRefactor:
+    def __init__(self, importer):
+        self.importer = importer
+        self.data = []
+
     @classmethod
     def import_data(cls, path, report):
         type_report = cls.verify_path(path)
