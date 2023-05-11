@@ -39,5 +39,5 @@ class ColoredReport:
                 date,
                 f"\033[36m{date}\033[0m",
             )
-
+        # print("oi", report, "tchau")
         return report

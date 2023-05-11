@@ -21,8 +21,6 @@ class CompleteReport(SimpleReport):
         for e in companies_list:
             str_products_stock += f"- {e[0]}: {e[1]}\n"
 
-        # print(f"{str_products_stock}")
-
         return (
             f"{simple_report_result}\n"
             f"Produtos estocados por empresa:\n"
