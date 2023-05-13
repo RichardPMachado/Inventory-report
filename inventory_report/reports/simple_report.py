@@ -25,10 +25,10 @@ class SimpleReport:
 
         empresa_com_mais_produtos = max(empresas, key=empresas.get)
 
-        print(
-            f"Data de fabricação mais antiga: {Oldest['data_de_fabricacao']}\n"
-            f"Data de validade mais próxima: {exp_date['data_de_validade']}\n"
-            f"Empresa com mais produtos: {empresa_com_mais_produtos}")
+    # print(
+    #     f"Data de fabricação mais antiga: {Oldest['data_de_fabricacao']}\n"
+    #     f"Data de validade mais próxima: {exp_date['data_de_validade']}\n"
+    #     f"Empresa com mais produtos: {empresa_com_mais_produtos}")
         return (
             f"Data de fabricação mais antiga: {Oldest['data_de_fabricacao']}\n"
             f"Data de validade mais próxima: {exp_date['data_de_validade']}\n"
