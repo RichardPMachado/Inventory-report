@@ -6,6 +6,12 @@ from inventory_report.importer.xml_importer import XmlImporter
 from inventory_report.inventory.inventory_refactor import InventoryRefactor
 
 
+csvImporter = CsvImporter
+xmlImporter = XmlImporter
+jsonImporter = JsonImporter
+print("oi", csvImporter, jsonImporter, xmlImporter)
+
+
 def main():
     try:
         path, type = sys.argv[1:]
@@ -13,10 +19,6 @@ def main():
         test = report_type[1:]
         # expression = eval(f"{test}Importer")
         # print(test)
-        csvImporter = CsvImporter
-        xmlImporter = XmlImporter
-        jsonImporter = JsonImporter
-        print("oi", csvImporter, jsonImporter, xmlImporter)
 
         report = InventoryRefactor(
             eval(f"{test}Importer")).import_data(path, type)
