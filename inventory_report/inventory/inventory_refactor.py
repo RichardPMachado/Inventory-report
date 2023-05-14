@@ -15,7 +15,6 @@ class InventoryRefactor:
     def import_data(self, path, report):
         # type_report = InventoryRefactor.verify_path(path)
         new_data = self.importer.import_data(path)
-        # print("oi", dir(self.data))
         self.data.extend(new_data)
         # if type_report == ".csv":
         #     report_read = CsvImporter.import_data(path)
@@ -30,7 +29,7 @@ class InventoryRefactor:
         return CompleteReport.generate(new_data)
 
     def __iter__(self):
-        print("oi", self.data)
+        # print("oi", self.data)
         return InventoryIterator(self.data)
 
     # @classmethod
